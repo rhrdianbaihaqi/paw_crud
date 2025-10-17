@@ -1,0 +1,302 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+}
+
+body {
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
+/* Header */
+.title {
+  text-align: center;
+  padding: 50px 0 30px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1e293b;
+  position: relative;
+}
+
+.title::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background: #3b82f6;
+  border-radius: 2px;
+}
+
+/* Main Container */
+.app-crud {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Add Button */
+.app-crud .tambah-data {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  background: #3b82f6;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.3);
+}
+
+.app-crud .tambah-data:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+
+/* Table */
+.app-crud table {
+  width: 100%;
+  margin: 30px auto 0;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-collapse: collapse;
+}
+
+.app-crud table tr {
+  transition: background-color 0.2s ease;
+}
+
+.app-crud table tr:not(:last-child) {
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.app-crud table tr:hover {
+  background-color: #f8fafc;
+}
+
+.app-crud table tr th {
+  background: #f1f5f9;
+  color: #475569;
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 18px 16px;
+  text-align: left;
+}
+
+.app-crud table tr td {
+  padding: 16px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/* Number Column */
+.app-crud table tr td:first-child {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Action Icons */
+.app-crud table tr td:last-child {
+  display: flex;
+  gap: 12px;
+}
+
+.app-crud table tr td i {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  font-size: 15px;
+}
+
+.app-crud table tr td .fa-pen-to-square {
+  color: #3b82f6;
+  background: #dbeafe;
+}
+
+.app-crud table tr td .fa-pen-to-square:hover {
+  background: #3b82f6;
+  color: white;
+  transform: scale(1.05);
+}
+
+.app-crud table tr td .fa-trash {
+  color: #ef4444;
+  background: #fee2e2;
+}
+
+.app-crud table tr td .fa-trash:hover {
+  background: #ef4444;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Empty State */
+.app-crud table tr td[colspan="7"] {
+  padding: 60px 20px;
+  text-align: center;
+  color: #64748b;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Form Styles */
+.form-add-data {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 30px 20px;
+}
+
+.form-add-data form table {
+  background: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: none;
+  margin: 0;
+}
+
+.form-add-data form table tr {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+  gap: 6px;
+}
+
+.form-add-data form table tr td label {
+  font-weight: 600;
+  font-size: 13px;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.form-add-data form table tr td input,
+.form-add-data form table tr td select {
+  background: #f8fafc;
+  width: 100%;
+  height: 48px;
+  border-radius: 8px;
+  border: 2px solid #e2e8f0;
+  padding: 0 14px;
+  font-size: 15px;
+  transition: all 0.2s ease;
+  color: #374151;
+}
+
+.form-add-data form table tr td input:focus,
+.form-add-data form table tr td select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+/* Form Buttons */
+.form-add-data form table tr .btn {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
+
+.form-add-data form table tr td button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 12px 24px;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.form-add-data form table tr td button:nth-child(1) {
+  background: #10b981;
+  color: white;
+}
+
+.form-add-data form table tr td button:nth-child(1):hover {
+  background: #059669;
+  transform: translateY(-1px);
+}
+
+.form-add-data form table tr td button:nth-child(2) {
+  background: #6b7280;
+  color: white;
+}
+
+.form-add-data form table tr td button:nth-child(2):hover {
+  background: #4b5563;
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .title {
+    font-size: 2rem;
+    padding: 40px 0 25px;
+  }
+
+  .app-crud {
+    padding: 0 15px;
+  }
+
+  .app-crud table {
+    margin-top: 20px;
+  }
+
+  .app-crud table tr th,
+  .app-crud table tr td {
+    padding: 12px 8px;
+    font-size: 12px;
+  }
+
+  .form-add-data {
+    padding: 20px 15px;
+  }
+
+  .form-add-data form table {
+    padding: 30px 20px;
+  }
+}
+
+/* Simple animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.app-crud table tbody tr {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Focus states for accessibility */
+.app-crud .tambah-data:focus,
+.form-add-data form table tr td button:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
